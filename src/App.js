@@ -2,24 +2,15 @@ import { ChatEngine } from 'react-chat-engine';
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChatEngine
+      height='100vh'
+      projectID='6d354254-3e2a-43af-93ed-790a79c567df'
+      userName='Caryin'
+      userSecret='123123'
+    />
   );
-}
+};
 
 export default App;
