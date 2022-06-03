@@ -8,17 +8,16 @@ import LoginForm from './components/LoginForm';
 import './App.css';
 
 const App = () => {
+  if (!localStorage.getItem('username')) return <LoginForm />;
+
   return (
-    <>
-      <LoginForm />
-      <ChatEngine
-        height='100vh'
-        projectID='6d354254-3e2a-43af-93ed-790a79c567df'
-        userName='Caryin'
-        userSecret='123123'
-        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      />
-    </>
+    <ChatEngine
+      height='100vh'
+      projectID='6d354254-3e2a-43af-93ed-790a79c567df'
+      userName={localStorage.getItem('username')}
+      userSecret={localStorage.getItem('password')}
+      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+    />
   );
 };
 
